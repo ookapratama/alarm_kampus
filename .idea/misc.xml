@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Mila/AndroidStudioProjects/alarm_kampus/app/src/main/res/drawable/ic_alka.xml" value="0.1635" />
+        <entry key="..\:/Users/Mila/AndroidStudioProjects/alarm_kampus/app/src/main/res/drawable/ic_dcc.xml" value="0.1635" />
         <entry key="..\:/Users/Mila/AndroidStudioProjects/alarm_kampus/app/src/main/res/drawable/undipaXdcc_background.xml" value="0.1635" />
         <entry key="..\:/Users/Mila/AndroidStudioProjects/alarm_kampus/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Mila/AndroidStudioProjects/alarm_kampus/app/src/main/res/mipmap-anydpi-v26/undipaXdcc.xml" value="0.121" />
       </map>
     </option>
   </component>
