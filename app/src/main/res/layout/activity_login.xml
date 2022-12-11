@@ -70,7 +70,10 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="30dp"
         android:backgroundTint="#2E2E8E"
-        android:text="Masuk" />
+        android:text="Masuk"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="20dp"
+        />
 
     <ImageView
         android:id="@+id/wave"
