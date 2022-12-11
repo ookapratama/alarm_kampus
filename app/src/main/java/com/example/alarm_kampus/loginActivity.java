@@ -27,8 +27,11 @@ public class loginActivity extends AppCompatActivity {
                 {
                     Toast.makeText(loginActivity.this, "Mohon periksa kembali inputan anda", Toast.LENGTH_LONG).show();
                 }
-                else
+                else {
                     startActivity(new Intent(loginActivity.this, HomeActivity.class));
+                    finish();
+                }
+
             }
         });
 
