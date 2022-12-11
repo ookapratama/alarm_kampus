@@ -8,7 +8,7 @@ import android.os.Handler;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int durasi = 4000;
+    private int durasi = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
