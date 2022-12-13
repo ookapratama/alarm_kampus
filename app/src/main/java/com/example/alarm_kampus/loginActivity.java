@@ -65,7 +65,7 @@ public class loginActivity extends AppCompatActivity {
 
                         @Override
                         public void onFailure(Call<Login> call, Throwable t) {
-
+                            Toast.makeText(loginActivity.this, t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
                         }
                     });
 
