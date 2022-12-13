@@ -9,21 +9,30 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.alarm_kampus.api.ApiInterface;
+import com.example.alarm_kampus.api.ApiClient;
+import com.example.alarm_kampus.model.login.Login;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class loginActivity extends AppCompatActivity {
 
     EditText username, password;
-//    String url = "https://service.undipa.ac.id/mhs.php";
+    EditText stb = findViewById(R.id.stambuk);
+    EditText psw = findViewById(R.id.password);
+    Button btnLogin = findViewById(R.id.btnLogin);
+
+    ApiInterface apiInterface;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        EditText stb = findViewById(R.id.stambuk);
-        EditText psw = findViewById(R.id.password);
-        Button btnLogin = findViewById(R.id.btnLogin);
 
-        apiIn
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,11 +42,34 @@ public class loginActivity extends AppCompatActivity {
                     Toast.makeText(loginActivity.this, "Mohon periksa kembali inputan anda", Toast.LENGTH_LONG).show();
                 }
                 else {
+                    String s = stb.getText().toString();
+                    String p = psw.getText().toString();
 
-                    apiClient = ApiClient.
+                    apiInterface = ApiClient.getClient().create(ApiInterface.class);
 
-                    startActivity(new Intent(loginActivity.this, HomeActivity.class));
-                    finish();
+                    Call<Login> loginCall = apiInterface.loginResponse(s,p);
+                    loginCall.enqueue(new Callback<Login>() {
+                        @Override
+                        public void onResponse(Call<Login> call, Response<Login> response) {
+                            if (response.body() != null && response.isSuccessful() && response.body().isStatus())
+                            {
+                                Toast.makeText(loginActivity.this, response.body().getLoginData().getNmmhs(), Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(loginActivity.this, HomeActivity.class));
+                                finish();
+                            }
+                            else
+                            {
+                                Toast.makeText(loginActivity.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<Login> call, Throwable t) {
+
+                        }
+                    });
+
+
                 }
 
             }
