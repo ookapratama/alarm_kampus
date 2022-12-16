@@ -19,6 +19,14 @@ public class DataItem{
 	@SerializedName("email")
 	private String email;
 
+	public  DataItem(String stb, String alm, String nmmhs, String nohp, String email) {
+		this.stb = stb;
+		this.alm = alm;
+		this.nmmhs = nmmhs;
+		this.nohp = nohp;
+		this.email = email;
+	}
+
 	public String getStb(){
 		return stb;
 	}

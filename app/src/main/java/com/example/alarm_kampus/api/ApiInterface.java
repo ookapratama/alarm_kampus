@@ -1,5 +1,7 @@
 package com.example.alarm_kampus.api;
 
+import android.util.Log;
+
 import com.example.alarm_kampus.model.login.Login;
 
 import retrofit2.Call;
@@ -12,8 +14,10 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("mhs.php")
     Call<Login> loginResponse(
-        @Field("username") String username,
-        @Field("password") String password
+        @Field("user") String username,
+        @Field("pass") String password,
+        @Field("api") String apiKey
+
     );
 
 }

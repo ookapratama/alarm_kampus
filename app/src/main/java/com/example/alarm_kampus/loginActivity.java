@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,42 +20,50 @@ import retrofit2.Response;
 
 public class loginActivity extends AppCompatActivity {
 
-    EditText username, password;
-    EditText stb = findViewById(R.id.stambuk);
-    EditText psw = findViewById(R.id.password);
-    Button btnLogin = findViewById(R.id.btnLogin);
 
+    String Username, Password;
     ApiInterface apiInterface;
-
+    EditText stb, psw;
+    Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        stb = findViewById(R.id.stambuk);
+        psw = findViewById(R.id.password);
+        btnLogin = findViewById(R.id.btnLogin);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (stb.getText().toString().length() == 0 || psw.getText().toString().length() == 0)
+
+                Username = stb.getText().toString();
+                Password = psw.getText().toString();
+
+                if (Username.length() == 0 || Password.length() == 0)
                 {
                     Toast.makeText(loginActivity.this, "Mohon periksa kembali inputan anda", Toast.LENGTH_LONG).show();
                 }
                 else {
-                    String s = stb.getText().toString();
-                    String p = psw.getText().toString();
 
-                    apiInterface = ApiClient.getClient().create(ApiInterface.class);
+//                    apiInterface = ApiClient.getClient().create(ApiInterface.class);
+                    Log.e("apiInterface : " + apiInterface, "tesss");
 
-                    Call<Login> loginCall = apiInterface.loginResponse(s,p);
+                    Call<Login> loginCall = apiInterface.loginResponse(Username,Password, "071994");
+                    Log.e("login : " + Username + Password, "tesss");
+
                     loginCall.enqueue(new Callback<Login>() {
                         @Override
                         public void onResponse(Call<Login> call, Response<Login> response) {
+                            Log.e("login : " + response, "tesss");
+
                             if (response.body() != null && response.isSuccessful() && response.body().isStatus())
                             {
                                 Toast.makeText(loginActivity.this, response.body().getLoginData().getNmmhs(), Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(loginActivity.this, HomeActivity.class));
+                                Intent intent = new Intent(loginActivity.this, HomeActivity.class);
+                                startActivity(intent);
                                 finish();
                             }
                             else

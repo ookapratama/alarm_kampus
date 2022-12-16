@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<network_security_config>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">service.undipa.ac.id</domain>
     </domain-config>
-</network_security_config>
+</network-security-config>
