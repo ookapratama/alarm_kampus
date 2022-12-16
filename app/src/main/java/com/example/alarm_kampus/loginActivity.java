@@ -14,15 +14,11 @@ import com.example.alarm_kampus.api.ApiInterface;
 import com.example.alarm_kampus.api.ApiClient;
 import com.example.alarm_kampus.model.login.Login;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class loginActivity extends AppCompatActivity {
 
 
     String Username, Password;
-    ApiInterface apiInterface;
     EditText stb, psw;
     Button btnLogin;
 
@@ -48,36 +44,7 @@ public class loginActivity extends AppCompatActivity {
                 }
                 else {
 
-//                    apiInterface = ApiClient.getClient().create(ApiInterface.class);
-                    Log.e("apiInterface : " + apiInterface, "tesss");
-
-                    Call<Login> loginCall = apiInterface.loginResponse(Username,Password, "071994");
-                    Log.e("login : " + Username + Password, "tesss");
-
-                    loginCall.enqueue(new Callback<Login>() {
-                        @Override
-                        public void onResponse(Call<Login> call, Response<Login> response) {
-                            Log.e("login : " + response, "tesss");
-
-                            if (response.body() != null && response.isSuccessful() && response.body().isStatus())
-                            {
-                                Toast.makeText(loginActivity.this, response.body().getLoginData().getNmmhs(), Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(loginActivity.this, HomeActivity.class);
-                                startActivity(intent);
-                                finish();
-                            }
-                            else
-                            {
-                                Toast.makeText(loginActivity.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
-                            }
-                        }
-
-                        @Override
-                        public void onFailure(Call<Login> call, Throwable t) {
-                            Toast.makeText(loginActivity.this, t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-                        }
-                    });
-
+//
 
                 }
 
