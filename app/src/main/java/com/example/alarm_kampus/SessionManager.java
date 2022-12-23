@@ -12,8 +12,6 @@ public class SessionManager {
     private static final String SHARED_REF_NAME = "ALARM KAMPUS";
     private static final String KEY_USERNAME = "keyusername";
     private static final String KEY_PASSWORD = "keypassword";
-    private static final String KEY_ALAMAT = "keyalamat";
-    private static final String KEY_EMAIL = "keyemail";
 
     private static final String KEY_STB = "keystb";
 
@@ -49,11 +47,7 @@ public class SessionManager {
         SharedPreferences sharedPreferences = Mcontext.getSharedPreferences(SHARED_REF_NAME, Context.MODE_PRIVATE);
         return new DataItem (
             sharedPreferences.getString(KEY_USERNAME, null),
-            sharedPreferences.getString(KEY_PASSWORD, null),
-            sharedPreferences.getString(KEY_STB, null),
-            sharedPreferences.getString(KEY_ALAMAT, null),
-            sharedPreferences.getString(KEY_EMAIL, null)
-
+            sharedPreferences.getString(KEY_PASSWORD, null)
         );
     }
 
