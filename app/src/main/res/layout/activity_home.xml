@@ -55,7 +55,10 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="20dp"
+            android:clickable="true"
+            android:id="@+id/setting"
             />
+
     </RelativeLayout>
 
 
