@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.alarm_kampus.RecycleHari.RecycleAdapter;
 
@@ -19,6 +20,7 @@ public class HomeActivity extends AppCompatActivity {
     RecyclerView.Adapter recycleViewAdapter;
     RecyclerView.LayoutManager recycleViewLayout;
     ImageView imageView;
+    TextView viewAlarm;
 
     String[] hari = {
             "Senin", "Selasa", "Rabu", "Kamis", "Jumat"
@@ -37,10 +39,30 @@ public class HomeActivity extends AppCompatActivity {
         rv.setAdapter(recycleViewAdapter);
 
         imageView = findViewById(R.id.setting);
+        viewAlarm = findViewById(R.id.viewAlarm);
+
+        viewAlarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(HomeActivity.this, AlarmAktif.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        rv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(HomeActivity.this, JadwalMatkul.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, JadwalMatkul.class);
+                Intent i = new Intent(HomeActivity.this, Setting.class);
                 startActivity(i);
                 finish();
             }

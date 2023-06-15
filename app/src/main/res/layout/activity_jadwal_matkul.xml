@@ -44,7 +44,17 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginVertical="20dp"
                 />
+
         </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleHari"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/detail_hari"
+            android:layout_marginTop="72dp"
+            />
 
 
     </RelativeLayout>
