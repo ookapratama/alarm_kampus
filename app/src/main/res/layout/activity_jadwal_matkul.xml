@@ -47,14 +47,146 @@
 
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycleHari"
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recycleHari"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:scrollbars="vertical"-->
+<!--            tools:listitem="@layout/detail_hari"-->
+<!--            android:layout_marginTop="72dp"-->
+<!--            />-->
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/detail_jadwal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical"
-            tools:listitem="@layout/detail_hari"
-            android:layout_marginTop="72dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:padding="20dp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:text="07.30 - 09.10"
+            android:textColor="@color/white"
+
             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:paddingTop="52dp"
+            android:paddingBottom="12dp"
+            android:paddingHorizontal="20dp"
+            android:letterSpacing="0.2"
+            android:textAllCaps="true"
+            android:text="Aplikasi Konsentrasi"
+            android:textColor="#9DD7EE"
+            android:layout_marginTop="10dp"
+            />
+
+        <Switch
+            android:id="@+id/toggle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_centerVertical="true"
+            />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/detail_jadwal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:padding="20dp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:text="07.30 - 09.10"
+            android:textColor="@color/white"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:paddingTop="52dp"
+            android:paddingBottom="12dp"
+            android:paddingHorizontal="20dp"
+            android:letterSpacing="0.2"
+            android:textAllCaps="true"
+            android:text="Aplikasi Konsentrasi"
+            android:textColor="#9DD7EE"
+            android:layout_marginTop="10dp"
+            />
+
+        <Switch
+            android:id="@+id/toggle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_centerVertical="true"
+            />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/detail_jadwal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:padding="20dp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:text="07.30 - 09.10"
+            android:textColor="@color/white"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:paddingTop="52dp"
+            android:paddingBottom="12dp"
+            android:paddingHorizontal="20dp"
+            android:letterSpacing="0.2"
+            android:textAllCaps="true"
+            android:text="Aplikasi Konsentrasi"
+            android:textColor="#9DD7EE"
+            android:layout_marginTop="10dp"
+            />
+
+        <Switch
+            android:id="@+id/toggle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_centerVertical="true"
+            />
+
 
 
     </RelativeLayout>
