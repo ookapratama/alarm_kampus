@@ -73,6 +73,15 @@
             android:clickable="true"
             android:src="@drawable/ic_setting" />
 
+        <Button
+            android:id="@+id/detail_hari"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="detail hari"
+            android:layout_margin="14dp"
+            />
+
     </RelativeLayout>
 
 

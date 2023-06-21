@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +22,8 @@ public class HomeActivity extends AppCompatActivity {
     RecyclerView.LayoutManager recycleViewLayout;
     ImageView imageView;
     TextView viewAlarm;
+
+    Button detail_hari;
 
     String[] hari = {
             "Senin", "Selasa", "Rabu", "Kamis", "Jumat"
@@ -40,6 +43,15 @@ public class HomeActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.setting);
         viewAlarm = findViewById(R.id.viewAlarm);
+        detail_hari = findViewById(R.id.detail_hari);
+
+        detail_hari.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, JadwalMatkul.class);
+                startActivity(i);
+            }
+        });
 
         viewAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
